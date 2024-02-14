@@ -5,7 +5,7 @@ namespace NetCoreLinqToSqlInjection.Controllers
 {
     public class CochesController : Controller
     {
-        private ICoche car ;
+        private ICoche car;
 
         public CochesController(ICoche coche)
         {

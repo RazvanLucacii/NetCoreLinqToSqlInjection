@@ -1,0 +1,33 @@
+﻿@model List<Doctor>
+
+<div class="container mt-5">
+    <h1>Doctres Dependency Injection</h1>
+    <hr/>
+    <p>
+        <a asp-controller="Doctores" asp-action="Create" class="btn btn-primary">
+            Crear Doctor
+        </a>
+    </p>
+    <hr/>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Apellido</th>
+                <th>Especialidad</th>
+                <th>Salario</th>
+                <th>Hospital</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Doctor doc in Model)
+            {
+                <tr>
+                    <td>@doc.Apellido</td>
+                    <td>@doc.Especialidad</td>
+                    <td>@doc.Salario</td>
+                    <td>@doc.IdHospital</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
