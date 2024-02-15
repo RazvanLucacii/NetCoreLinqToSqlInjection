@@ -9,6 +9,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddTransient<IRepositoryDoctores, RepositoryDoctoresOracle>();
 
+builder.Services.AddTransient<IRepositoryPersonajes, RepositoryPersonajesOracle>();
+
 //builder.Services.AddTransient<Coche>();
 
 //builder.Services.AddSingleton<ICoche, Deportivo>();

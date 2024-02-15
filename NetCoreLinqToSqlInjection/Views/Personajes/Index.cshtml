@@ -1,0 +1,40 @@
+﻿@model List<Personaje>
+
+<div class="container mt-5">
+    <h1>PERSONAJES Dependency Injection</h1>
+    <hr />
+    <p>
+        <a asp-controller="Personajes" asp-action="Create" class="btn btn-primary">
+            Crear Personaje
+        </a>
+    </p>
+    <hr />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID Personaje</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Personaje pj in Model)
+            {
+                <tr>
+                    <td>@pj.IdPersonaje</td>
+                    <td>@pj.Nombre</td>
+                    <td><img src="@pj.Imagen" style="width: 300px; height: 200px" /></td>
+                    <td>
+                        <a asp-controller="Personajes" asp-action="ModificarPersonaje" class="btn btn-warning" asp-route-iddoctor="@pj.IdPersonaje">
+                            Modificar
+                        </a>
+                        <a asp-controller="Personajes" asp-action="DeletePersonaje" class="btn btn-danger" asp-route-iddoctor="@pj.IdPersonaje">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

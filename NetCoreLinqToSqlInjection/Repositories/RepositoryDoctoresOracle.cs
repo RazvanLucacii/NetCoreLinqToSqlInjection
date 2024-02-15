@@ -40,7 +40,7 @@ namespace NetCoreLinqToSqlInjection.Repositories
         {
             string connectionString = @"Data Source=LOCALHOST:1521/XE; Persist Security Info=True; User Id=SYSTEM; Password=oracle";
             this.connection = new OracleConnection(connectionString);
-            this.command = new OracleCommand(connectionString);
+            this.command = new OracleCommand();
             this.command.Connection = this.connection;
             string sql = "select * from DOCTOR";
             OracleDataAdapter adDoct = new OracleDataAdapter(sql, this.connection);
