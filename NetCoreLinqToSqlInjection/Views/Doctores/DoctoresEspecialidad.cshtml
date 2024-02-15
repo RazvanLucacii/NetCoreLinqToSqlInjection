@@ -1,0 +1,38 @@
+﻿@model List<Doctor>
+
+<div class="container mt-5">
+    <h1>Doctores Especialidad</h1>
+
+    <form method="post">
+        <label>Introduce la especialidad: </label>
+        <input type="text" name="especialidad" class="form-control" />
+        <br/>
+        <button class="btn btn-success">
+            Buscar Doctores
+        </button>
+    </form>
+    <hr/>
+    <h2>@ViewData["MENSAJE"]</h2>
+    @if (Model != null)
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Apellido</th>
+                    <th>Especialidad</th>
+                    <th>Salario</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Doctor doc in Model)
+                {
+                    <tr>
+                        <td>@doc.Apellido</td>
+                        <td>@doc.Especialidad</td>
+                        <td>@doc.Salario</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
