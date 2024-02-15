@@ -1,0 +1,23 @@
+﻿@model Personaje
+
+<div class="container mt-5">
+    <h1>Modificar Personaje</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Personajes">
+            Atras
+        </a>
+    </p>
+
+    <form method="post" asp-action="ModificarPersonajePost">
+        <input type="hidden" name="IdPersonaje" value="@Model.IdPersonaje" />
+        <label>Nombre:</label>
+        <input class="form-control" type="text" name="Nombre" value="@Model.Nombre" />
+        <label>Imagen: </label>
+        <input class="form-control" type="text" name="Imagen" value="@Model.Imagen" />
+        <br />
+        <button class="btn btn-success" type="submit">
+            Modificar Personaje
+        </button>
+    </form>
+</div>

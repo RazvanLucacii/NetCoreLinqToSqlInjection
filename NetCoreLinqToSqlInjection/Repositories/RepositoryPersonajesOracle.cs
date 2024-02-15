@@ -74,10 +74,10 @@ namespace NetCoreLinqToSqlInjection.Repositories
             return personajes;
         }
 
-        public Personaje FindPersonaje(int idPersonaje)
+        public Personaje FindPersonaje(int IdPersonaje)
         {
             var consulta = from datos in this.tablaPersonajes.AsEnumerable()
-                           where datos.Field<int>("IDPERSONAJE") == idPersonaje
+                           where datos.Field<int>("IDPERSONAJE") == IdPersonaje
                            select datos;
             var row = consulta.First();
             Personaje personaje = new Personaje();

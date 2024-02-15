@@ -26,10 +26,10 @@
                     <td>@pj.Nombre</td>
                     <td><img src="@pj.Imagen" style="width: 300px; height: 200px" /></td>
                     <td>
-                        <a asp-controller="Personajes" asp-action="ModificarPersonaje" class="btn btn-warning" asp-route-iddoctor="@pj.IdPersonaje">
+                        <a asp-controller="Personajes" asp-action="ModificarPersonaje" class="btn btn-warning" asp-route-IdPersonaje="@pj.IdPersonaje">
                             Modificar
                         </a>
-                        <a asp-controller="Personajes" asp-action="DeletePersonaje" class="btn btn-danger" asp-route-iddoctor="@pj.IdPersonaje">
+                        <a asp-controller="Personajes" asp-action="DeletePersonaje" class="btn btn-danger" asp-route-IdPersonaje="@pj.IdPersonaje">
                             Eliminar
                         </a>
                     </td>

@@ -29,5 +29,18 @@ namespace NetCoreLinqToSqlInjection.Controllers
             this.repoPj.InsertPersonaje(personaje.IdPersonaje, personaje.Nombre, personaje.Imagen);
             return RedirectToAction("Index");
         }
+
+        public IActionResult ModificarPersonaje(int idPersonaje)
+        {
+            Personaje personaje = this.repoPj.FindPersonaje(idPersonaje);
+            return View(personaje);
+        }
+
+        [HttpPost]
+        public IActionResult ModificarPersonajePost(Personaje personaje)
+        {
+            this.repoPj.ModificarPersonaje(personaje.IdPersonaje, personaje.Nombre, personaje.Imagen);
+            return RedirectToAction("Index");
+        }
     }
 }
